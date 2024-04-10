@@ -1,5 +1,4 @@
 package TTTINTTT;
-
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -8,7 +7,6 @@ public class TTTINTTT {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         char [][][] board = new char [9][3][3];
-
         for(int i = 0; i < 9; i++){
             for (int row = 0; row < 3; row++) {
                 for (int col = 0; col < 3; col++) {
@@ -16,15 +14,15 @@ public class TTTINTTT {
                 }
             }
         }
-
+        // we only check the game-over when 20 moves has been done.
         int moves = 0;
-        System.out.print("which board you want to start with : ");
+        System.out.print("Which board you want to start with : ");
         int mboard = in.nextInt();
         char player = 'X';
         boolean gameover = false;
         while(!gameover){
             print(board);
-            System.out.println("Enter your move in board"+mboard+" : ");
+            System.out.println("Enter your move in board "+mboard+" : ");
             int row = in.nextInt();
             int col = in.nextInt();
             if(board[mboard][row][col] == ' '){
@@ -37,17 +35,15 @@ public class TTTINTTT {
                     System.out.println(player+"Have won the game");
                 }else{
                     player = player == 'X' ? '0' : 'X';
-
-                    if(col < 3){
+                    if(row == 0 && col < 3){
                         mboard = col;
                     }
-                    if (col > 2 && col < 6){
+                    if (row == 1 && col < 3 ){
                         mboard = col+3;
                     }
-                    if (col > 5 && col < 9){
+                    if (row == 2 && col < 3){
                         mboard = col+6;
                     }
-
                 }
             }else{
                 System.out.println("Invalid move");
@@ -143,7 +139,7 @@ public class TTTINTTT {
             return true;
         }
 
-        //checking col wise
+        //checking colWise
         if(m0WP == player && m3WP == player && m6WP == player){
             return true;
         }
@@ -153,6 +149,7 @@ public class TTTINTTT {
         if(m2WP == player && m5WP == player && m8WP == player){
             return true;
         }
+
         //checking diagonalWise
         if(m0WP == player && m4WP == player && m8WP == player){
             return true;
@@ -192,7 +189,7 @@ public class TTTINTTT {
                 }
                 System.out.println();
             }
-            System.out.println("Mini board = "+i);
+            System.out.println("Mini board -> "+i);
         }
     }
 
