@@ -1,5 +1,6 @@
 # TTTINTTT (TicTacToe in TicTacToe)
-This game is different from noramal tictactoe gmae. Difference between normal tictactoe and tictactoe in tictactoe is :-
+This game is different from noramal tictactoe gmae. Difference between normal tictactoe and tictactoe in tictactoe is that
+
 Here we have total 9 normal tictactoe board
 [0-8] denotes total 9 tictactoe boards, [0-2] denotes row of minitictactoe board, [0-2] denotes row of minitictactoe board.
 At first time the first can choose any mini tictactoe board/
