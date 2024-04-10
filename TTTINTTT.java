@@ -22,7 +22,7 @@ public class TTTINTTT {
         boolean gameover = false;
         while(!gameover){
             print(board);
-            System.out.println("Enter your move in board "+mboard+" : ");
+            System.out.println("Enter player "+"'"+player+"'"+" move in board "+mboard+" : ");
             int row = in.nextInt();
             int col = in.nextInt();
             if(board[mboard][row][col] == ' '){
