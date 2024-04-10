@@ -182,15 +182,51 @@ public class TTTINTTT {
         return false;
     }
     private static void print(char[][][] board){
-        for(int i = 0; i < 9; i++){
-            for (int row = 0; row < 3; row++) {
-                for (int col = 0; col < 3; col++) {
-                    System.out.print(board[i][row][col]+" | ");
-                }
-                System.out.println();
-            }
-            System.out.println("Mini board -> "+i);
-        }
-    }
+        //tictactoe [0, 1, 2]
+        System.out.print("| "+board[0][0][0]+"|"+board[0][0][1]+" |"+board[0][0][2]+" |\t\t");
+        System.out.print("| "+board[1][0][0]+"|"+board[1][0][1]+" |"+board[1][0][2]+" |\t\t");
+        System.out.print("| "+board[2][0][0]+"|"+board[2][0][1]+" |"+board[2][0][2]+" |\t\t");
+        System.out.println();
+        System.out.print("| "+board[0][1][0]+"|"+board[0][1][1]+" |"+board[0][1][2]+" |\t\t");
+        System.out.print("| "+board[1][1][0]+"|"+board[1][1][1]+" |"+board[1][1][2]+" |\t\t");
+        System.out.print("| "+board[2][1][0]+"|"+board[2][1][1]+" |"+board[2][1][2]+" |\t\t");
+        System.out.println();
+        System.out.print("| "+board[0][2][0]+"|"+board[0][2][1]+" |"+board[0][2][2]+" |\t\t");
+        System.out.print("| "+board[1][2][0]+"|"+board[1][2][1]+" |"+board[1][2][2]+" |\t\t");
+        System.out.print("| "+board[2][2][0]+"|"+board[2][2][1]+" |"+board[2][2][2]+" |\t\t");
+        System.out.println();
+        System.out.println(" Board 0"+"\t\t  Board 1 \t      Board 2");
+        System.out.println();
 
+        //tictactoe [3, 4, 5]
+        System.out.print("| "+board[3][0][0]+"|"+board[3][0][1]+" |"+board[3][0][2]+" |\t\t");
+        System.out.print("| "+board[4][0][0]+"|"+board[4][0][1]+" |"+board[4][0][2]+" |\t\t");
+        System.out.print("| "+board[5][0][0]+"|"+board[5][0][1]+" |"+board[5][0][2]+" |\t\t");
+        System.out.println();
+        System.out.print("| "+board[3][1][0]+"|"+board[3][1][1]+" |"+board[3][1][2]+" |\t\t");
+        System.out.print("| "+board[4][1][0]+"|"+board[4][1][1]+" |"+board[4][1][2]+" |\t\t");
+        System.out.print("| "+board[5][1][0]+"|"+board[5][1][1]+" |"+board[5][1][2]+" |\t\t");
+        System.out.println();
+        System.out.print("| "+board[3][2][0]+"|"+board[3][2][1]+" |"+board[3][2][2]+" |\t\t");
+        System.out.print("| "+board[4][2][0]+"|"+board[4][2][1]+" |"+board[4][2][2]+" |\t\t");
+        System.out.print("| "+board[5][2][0]+"|"+board[5][2][1]+" |"+board[5][2][2]+" |\t\t");
+        System.out.println();
+        System.out.println(" Board 3"+"\t\t  Board 4 \t      Board 5");
+        System.out.println();
+
+        //tictactoe [6, 7, 8]
+        System.out.print("| "+board[6][0][0]+"|"+board[6][0][1]+" |"+board[6][0][2]+" |\t\t");
+        System.out.print("| "+board[7][0][0]+"|"+board[7][0][1]+" |"+board[7][0][2]+" |\t\t");
+        System.out.print("| "+board[8][0][0]+"|"+board[8][0][1]+" |"+board[8][0][2]+" |\t\t");
+        System.out.println();
+        System.out.print("| "+board[6][1][0]+"|"+board[6][1][1]+" |"+board[6][1][2]+" |\t\t");
+        System.out.print("| "+board[7][1][0]+"|"+board[7][1][1]+" |"+board[7][1][2]+" |\t\t");
+        System.out.print("| "+board[8][1][0]+"|"+board[8][1][1]+" |"+board[8][1][2]+" |\t\t");
+        System.out.println();
+        System.out.print("| "+board[6][2][0]+"|"+board[6][2][1]+" |"+board[6][2][2]+" |\t\t");
+        System.out.print("| "+board[7][2][0]+"|"+board[7][2][1]+" |"+board[7][2][2]+" |\t\t");
+        System.out.print("| "+board[8][2][0]+"|"+board[8][2][1]+" |"+board[8][2][2]+" |\t\t");
+        System.out.println();
+        System.out.println(" Board 6"+"\t\t  Board 7 \t      Board 8");
+    }
 }
