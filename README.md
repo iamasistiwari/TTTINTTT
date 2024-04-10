@@ -1,4 +1,4 @@
-# TTTINTTT (TicTacToe in TicTacToe)
+# TTTINTTT (TicTacToe in TicTacToe) (MADE BY ME)
 This game is different from normal ticktactoe game. Difference between normal tictactoe and tictactoe in tictactoe is that.
 Here we have total 9 normal tictactoe board.
 [0-8] denotes total 9 tictactoe boards, [0-2] denotes row of minitictactoe board, [0-2] denotes row of minitictactoe board.
