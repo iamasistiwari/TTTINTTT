@@ -37,7 +37,16 @@ public class TTTINTTT {
                     System.out.println(player+"Have won the game");
                 }else{
                     player = player == 'X' ? '0' : 'X';
-                    mboard = col;
+
+                    if(col < 3){
+                        mboard = col;
+                    }
+                    if (col > 2 && col < 6){
+                        mboard = col+3;
+                    }
+                    if (col > 5 && col < 9){
+                        mboard = col+6;
+                    }
 
                 }
             }else{
@@ -183,7 +192,7 @@ public class TTTINTTT {
                 }
                 System.out.println();
             }
-            System.out.println("Mini board = "+i+1);
+            System.out.println("Mini board = "+i);
         }
     }
 
