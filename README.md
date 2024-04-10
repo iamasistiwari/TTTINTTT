@@ -8,4 +8,4 @@ player won when they won mini tictictoe rowWise or colWise or diagonalWise
 
 
 
-                                                     CLONE IT AND ENJOY THANKYOU
+                                               CLONE IT AND ENJOY THANKYOU
