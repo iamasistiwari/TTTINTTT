@@ -17,7 +17,6 @@ public class TTTINTTT {
             }
         }
 
-
         int moves = 0;
         System.out.print("which board you want to start with : ");
         int mboard = in.nextInt();
@@ -58,61 +57,98 @@ public class TTTINTTT {
         boolean m6 = false;
         boolean m7 = false;
         boolean m8 = false;
+        char m0WP = 'Y';
+        char m1WP = 'X';
+        char m2WP = '2';
+        char m3WP = '3';
+        char m4WP = '4';
+        char m5WP = '9';
+        char m6WP = '6';
+        char m7WP = '7';
+        char m8WP = '8';
+        
         if (!m0){
             m0 = MiniBoardWon(player, 0, board);
+            if(m0){
+                m0WP = player;
+            }
         }
         if (!m1){
             m1 = MiniBoardWon(player, 1, board);
+            if(m1){
+                m1WP = player;
+            }
         }
         if (!m2){
             m2 = MiniBoardWon(player, 2, board);
+            if(m2){
+                m2WP = player;
+            }
         }
         if (!m3){
             m3 = MiniBoardWon(player, 3, board);
+            if(m3){
+                m3WP = player;
+            }
         }
         if (!m4){
             m4 = MiniBoardWon(player, 4, board);
+            if(m4){
+                m4WP = player;
+            }
         }
         if (!m5){
             m5 = MiniBoardWon(player, 5, board);
+            if(m5){
+                m5WP = player;
+            }
         }
         if (!m6){
             m6 = MiniBoardWon(player, 6, board);
+            if(m0){
+                m6WP = player;
+            }
         }
         if (!m7){
             m7 = MiniBoardWon(player, 7, board);
+            if(m7){
+                m7WP = player;
+            }
         }
         if (!m8){
             m8 = MiniBoardWon(player, 8, board);
+            if(m8){
+                m8WP = player;
+            }
         }
 
 
         //checking rowWise
-        if(m0 && m1 && m2){
+        if(m0WP == player && m1WP == player && m2WP == player){
             return true;
         }
-        if(m3 && m4 && m5){
+        if(m3WP == player && m4WP == player && m5WP == player){
             return true;
         }
-        if(m6 && m7 && m8){
+        if(m6WP == player && m7WP == player && m8WP == player){
             return true;
         }
 
         //checking col wise
-        if(m0 && m3 && m6){
+        if(m0WP == player && m3WP == player && m6WP == player){
             return true;
         }
-        if(m1 && m4 && m7){
+        if(m1WP == player && m4WP == player && m7WP == player ){
             return true;
         }
-        if(m2 && m5 && m8){
+        if(m2WP == player && m5WP == player && m8WP == player){
             return true;
         }
         //checking diagonalWise
-        if(m0 && m4 && m8){
+        if(m0WP == player && m4WP == player && m8WP == player){
             return true;
         }
-        if(m2 && m4 && m6){
+        if(m2WP == player && m4WP == player && m6WP == player){
             return true;
         }
         return false;
