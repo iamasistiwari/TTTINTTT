@@ -1,12 +1,15 @@
 package TTTINTTT;
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class TTTINTTT {
     public static void main(String[] args) {
+        // for input scanner is added
         Scanner in = new Scanner(System.in);
+
+        // Big board of 3X3
         char [][][] board = new char [9][3][3];
+
+        // marking blank each boxes and its element
         for(int i = 0; i < 9; i++){
             for (int row = 0; row < 3; row++) {
                 for (int col = 0; col < 3; col++) {
@@ -14,13 +17,14 @@ public class TTTINTTT {
                 }
             }
         }
-        // we only check the game-over when 20 moves has been done.
+
+        // we only check the game-over when at-least 18 moves played.
         int moves = 0;
         System.out.print("Which board you want to start with : ");
         int mboard = in.nextInt();
         char player = 'X';
-        boolean gameover = false;
-        while(!gameover){
+        boolean gameOver = false;
+        while(!gameOver){
             print(board);
             System.out.println("Enter player "+"'"+player+"'"+" move in board "+mboard+" : ");
             int row = in.nextInt();
@@ -29,19 +33,19 @@ public class TTTINTTT {
                 board[mboard][row][col] = player;
                 moves++;
                 if(moves > 18){
-                    gameover = haveWon(board, player);
+                    gameOver = haveWon(board, player);
                 }
-                if(gameover){
+                if(gameOver){
                     System.out.println(player+"Have won the game");
                 }else{
                     player = player == 'X' ? '0' : 'X';
                     if(row == 0 && col < 3){
                         mboard = col;
                     }
-                    if (row == 1 && col < 3 ){
+                    if (row == 1){
                         mboard = col+3;
                     }
-                    if (row == 2 && col < 3){
+                    if (row == 2){
                         mboard = col+6;
                     }
                 }
@@ -62,18 +66,23 @@ public class TTTINTTT {
         boolean m6 = false;
         boolean m7 = false;
         boolean m8 = false;
-        char m0WP = 'Y';
-        char m1WP = 'X';
+
+        // used to store who won mini-game
+        char m0WP = '0';
+        char m1WP = '1';
         char m2WP = '2';
         char m3WP = '3';
         char m4WP = '4';
-        char m5WP = '9';
+        char m5WP = '5';
         char m6WP = '6';
         char m7WP = '7';
         char m8WP = '8';
-        
+
+
+        // like if anyone won mini-board it doesn't going to check anymore.
         if (!m0){
             m0 = MiniBoardWon(player, 0, board);
+            // this is used to know who won the game
             if(m0){
                 m0WP = player;
             }
@@ -110,7 +119,7 @@ public class TTTINTTT {
         }
         if (!m6){
             m6 = MiniBoardWon(player, 6, board);
-            if(m0){
+            if(m6){
                 m6WP = player;
             }
         }
@@ -127,7 +136,7 @@ public class TTTINTTT {
             }
         }
 
-
+        // checking whole game won
         //checking rowWise
         if(m0WP == player && m1WP == player && m2WP == player){
             return true;
@@ -159,24 +168,24 @@ public class TTTINTTT {
         }
         return false;
     }
-    private static boolean MiniBoardWon(char player, int board, char[][][] mboard){
+    private static boolean MiniBoardWon(char player, int mboard, char[][][] board){
         // check row wise
         for (int i = 0; i < 3; i++) {
-            if(mboard[board][i][0] == player && mboard[board][i][1] == player && mboard[board][i][2] == player){
+            if(board[mboard][i][0] == player && board[mboard][i][1] == player && board[mboard][i][2] == player){
                 return true;
             }
         }
         // check col wise
         for (int i = 0; i < 3; i++) {
-            if(mboard[board][0][i] == player && mboard[board][1][i] == player && mboard[board][2][i] == player){
+            if(board[mboard][0][i] == player && board[mboard][1][i] == player && board[mboard][2][i] == player){
                 return true;
             }
         }
         // check diagonalWise
-        if(mboard[board][0][0] == player && mboard[board][1][1] == player && mboard[board][2][2] == player){
+        if(board[mboard][0][0] == player && board[mboard][1][1] == player && board[mboard][2][2] == player){
             return true;
         }
-        if(mboard[board][0][2] == player && mboard[board][1][1] == player && mboard[board][2][0] == player){
+        if(board[mboard][0][2] == player && board[mboard][1][1] == player && board[mboard][2][0] == player){
             return true;
         }
         return false;
