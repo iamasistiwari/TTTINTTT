@@ -32,7 +32,7 @@ public class TTTINTTT {
             int row = in.nextInt();
             int col = in.nextInt();
             System.out.println();
-            if(board[mboard][row][col] == ' '){
+            if(row < 3 && col < 3 && board[mboard][row][col] == ' '){
                 board[mboard][row][col] = player;
                 moves++;
                 if(moves > 4){
@@ -43,7 +43,7 @@ public class TTTINTTT {
                     System.out.println();
                 }else{
                     player = player == 'X' ? '0' : 'X';
-                    if(row == 0 && col < 3){
+                    if(row == 0){
                         mboard = col;
                     }
                     if (row == 1){
@@ -55,6 +55,7 @@ public class TTTINTTT {
                 }
             }else{
                 System.out.println("Invalid move");
+                System.out.println();
             }
         }
         print(board);
@@ -83,7 +84,6 @@ public class TTTINTTT {
     private static boolean m8 = false;
 
     private static boolean haveWon(char[][][] board, char player){
-
 
         // like if anyone won mini-board it doesn't going to check anymore.
         if (!m0){
