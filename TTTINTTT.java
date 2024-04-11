@@ -60,7 +60,7 @@ public class TTTINTTT {
     }
 
     // used to store who won mini-game
-    private static char m0WP = '0';
+    private static char m0WP = '1';
     private static char m1WP = '1';
     private static char m2WP = '2';
     private static char m3WP = '3';
@@ -209,7 +209,7 @@ public class TTTINTTT {
         System.out.print("| "+board[2][2][0]+"|"+board[2][2][1]+" |"+board[2][2][2]+" |\t\t");
         System.out.println();
         System.out.print(" Board 0"+"\t\t  Board 1 \t      Board 2\t  ");
-        if(m0WP != '0'){
+        if(m0WP != '1'){
             System.out.print(" | '"+m0WP+"' won board 0 | ");
         }
         if(m1WP != '1'){
@@ -219,7 +219,7 @@ public class TTTINTTT {
             System.out.print(" | '"+m2WP+"' won board 2 | ");
         }
         System.out.println();
-
+        System.out.println();
         //tictactoe [3, 4, 5]
         System.out.print("| "+board[3][0][0]+"|"+board[3][0][1]+" |"+board[3][0][2]+" |\t\t");
         System.out.print("| "+board[4][0][0]+"|"+board[4][0][1]+" |"+board[4][0][2]+" |\t\t");
@@ -233,7 +233,7 @@ public class TTTINTTT {
         System.out.print("| "+board[4][2][0]+"|"+board[4][2][1]+" |"+board[4][2][2]+" |\t\t");
         System.out.print("| "+board[5][2][0]+"|"+board[5][2][1]+" |"+board[5][2][2]+" |\t\t");
         System.out.println();
-        System.out.println(" Board 3"+"\t\t  Board 4 \t      Board 5");
+        System.out.print(" Board 3"+"\t\t  Board 4 \t      Board 5\t  ");
         if(m3WP != '3'){
             System.out.print(" | '"+m3WP+"' won board 3 | ");
         }
@@ -244,7 +244,7 @@ public class TTTINTTT {
             System.out.print(" | '"+m5WP+"' won board 5 | ");
         }
         System.out.println();
-
+        System.out.println();
         //tictactoe [6, 7, 8]
         System.out.print("| "+board[6][0][0]+"|"+board[6][0][1]+" |"+board[6][0][2]+" |\t\t");
         System.out.print("| "+board[7][0][0]+"|"+board[7][0][1]+" |"+board[7][0][2]+" |\t\t");
@@ -258,7 +258,7 @@ public class TTTINTTT {
         System.out.print("| "+board[7][2][0]+"|"+board[7][2][1]+" |"+board[7][2][2]+" |\t\t");
         System.out.print("| "+board[8][2][0]+"|"+board[8][2][1]+" |"+board[8][2][2]+" |\t\t");
         System.out.println();
-        System.out.println(" Board 6"+"\t\t  Board 7 \t      Board 8");
+        System.out.print(" Board 6"+"\t\t  Board 7 \t      Board 8\t  ");
         if(m6WP != '6'){
             System.out.print(" | '"+m6WP+"' won board 6 | ");
         }
