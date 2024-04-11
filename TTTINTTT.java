@@ -40,6 +40,7 @@ public class TTTINTTT {
                 }
                 if(gameOver){
                     System.out.println("Congratulations Player '"+player+"' Have won the game");
+                    System.out.println();
                 }else{
                     player = player == 'X' ? '0' : 'X';
                     if(row == 0 && col < 3){
