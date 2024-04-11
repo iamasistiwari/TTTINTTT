@@ -35,7 +35,7 @@ public class TTTINTTT {
             if(board[mboard][row][col] == ' '){
                 board[mboard][row][col] = player;
                 moves++;
-                if(moves > 1){
+                if(moves > 12){
                     gameOver = haveWon(board, player);
                 }
                 if(gameOver){
@@ -71,17 +71,18 @@ public class TTTINTTT {
     private static char m7WP = '7';
     private static char m8WP = '8';
 
+    // first check mini board
+    private static boolean m0 = false;
+    private static boolean m1 = false;
+    private static boolean m2 = false;
+    private static boolean m3 = false;
+    private static boolean m4 = false;
+    private static boolean m5 = false;
+    private static boolean m6 = false;
+    private static boolean m7 = false;
+    private static boolean m8 = false;
+
     private static boolean haveWon(char[][][] board, char player){
-        // first check mini board
-        boolean m0 = false;
-        boolean m1 = false;
-        boolean m2 = false;
-        boolean m3 = false;
-        boolean m4 = false;
-        boolean m5 = false;
-        boolean m6 = false;
-        boolean m7 = false;
-        boolean m8 = false;
 
 
         // like if anyone won mini-board it doesn't going to check anymore.
