@@ -35,7 +35,7 @@ public class TTTINTTT {
             if(board[mboard][row][col] == ' '){
                 board[mboard][row][col] = player;
                 moves++;
-                if(moves > 18){
+                if(moves > 1){
                     gameOver = haveWon(board, player);
                 }
                 if(gameOver){
@@ -58,6 +58,18 @@ public class TTTINTTT {
         }
         print(board);
     }
+
+    // used to store who won mini-game
+    private static char m0WP = '0';
+    private static char m1WP = '1';
+    private static char m2WP = '2';
+    private static char m3WP = '3';
+    private static char m4WP = '4';
+    private static char m5WP = '5';
+    private static char m6WP = '6';
+    private static char m7WP = '7';
+    private static char m8WP = '8';
+
     private static boolean haveWon(char[][][] board, char player){
         // first check mini board
         boolean m0 = false;
@@ -69,17 +81,6 @@ public class TTTINTTT {
         boolean m6 = false;
         boolean m7 = false;
         boolean m8 = false;
-
-        // used to store who won mini-game
-        char m0WP = '0';
-        char m1WP = '1';
-        char m2WP = '2';
-        char m3WP = '3';
-        char m4WP = '4';
-        char m5WP = '5';
-        char m6WP = '6';
-        char m7WP = '7';
-        char m8WP = '8';
 
 
         // like if anyone won mini-board it doesn't going to check anymore.
@@ -207,7 +208,16 @@ public class TTTINTTT {
         System.out.print("| "+board[1][2][0]+"|"+board[1][2][1]+" |"+board[1][2][2]+" |\t\t");
         System.out.print("| "+board[2][2][0]+"|"+board[2][2][1]+" |"+board[2][2][2]+" |\t\t");
         System.out.println();
-        System.out.println(" Board 0"+"\t\t  Board 1 \t      Board 2");
+        System.out.print(" Board 0"+"\t\t  Board 1 \t      Board 2\t  ");
+        if(m0WP != '0'){
+            System.out.print(" | '"+m0WP+"' won board 0 | ");
+        }
+        if(m1WP != '1'){
+            System.out.print(" | '"+m1WP+"' won board 1 | ");
+        }
+        if(m2WP != '2'){
+            System.out.print(" | '"+m2WP+"' won board 2 | ");
+        }
         System.out.println();
 
         //tictactoe [3, 4, 5]
@@ -224,6 +234,15 @@ public class TTTINTTT {
         System.out.print("| "+board[5][2][0]+"|"+board[5][2][1]+" |"+board[5][2][2]+" |\t\t");
         System.out.println();
         System.out.println(" Board 3"+"\t\t  Board 4 \t      Board 5");
+        if(m3WP != '3'){
+            System.out.print(" | '"+m3WP+"' won board 3 | ");
+        }
+        if(m4WP != '4'){
+            System.out.print(" | '"+m4WP+"' won board 4 | ");
+        }
+        if(m5WP != '5'){
+            System.out.print(" | '"+m5WP+"' won board 5 | ");
+        }
         System.out.println();
 
         //tictactoe [6, 7, 8]
@@ -240,5 +259,15 @@ public class TTTINTTT {
         System.out.print("| "+board[8][2][0]+"|"+board[8][2][1]+" |"+board[8][2][2]+" |\t\t");
         System.out.println();
         System.out.println(" Board 6"+"\t\t  Board 7 \t      Board 8");
+        if(m6WP != '6'){
+            System.out.print(" | '"+m6WP+"' won board 6 | ");
+        }
+        if(m7WP != '7'){
+            System.out.print(" | '"+m7WP+"' won board 7 | ");
+        }
+        if(m8WP != '8'){
+            System.out.print(" | '"+m8WP+"' won board 8 | ");
+        }
+        System.out.println();
     }
 }
