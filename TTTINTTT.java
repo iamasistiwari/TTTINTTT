@@ -35,7 +35,7 @@ public class TTTINTTT {
             if(board[mboard][row][col] == ' '){
                 board[mboard][row][col] = player;
                 moves++;
-                if(moves > 12){
+                if(moves > 4){
                     gameOver = haveWon(board, player);
                 }
                 if(gameOver){
