@@ -26,9 +26,12 @@ public class TTTINTTT {
         boolean gameOver = false;
         while(!gameOver){
             print(board);
+            System.out.println();
+            System.out.println();
             System.out.println("Enter player "+"'"+player+"'"+" move in board "+mboard+" : ");
             int row = in.nextInt();
             int col = in.nextInt();
+            System.out.println();
             if(board[mboard][row][col] == ' '){
                 board[mboard][row][col] = player;
                 moves++;
@@ -36,7 +39,7 @@ public class TTTINTTT {
                     gameOver = haveWon(board, player);
                 }
                 if(gameOver){
-                    System.out.println(player+"Have won the game");
+                    System.out.println("Congratulations Player '"+player+"' Have won the game");
                 }else{
                     player = player == 'X' ? '0' : 'X';
                     if(row == 0 && col < 3){
