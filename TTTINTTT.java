@@ -6,7 +6,7 @@ public class TTTINTTT {
         // for input scanner is added
         Scanner in = new Scanner(System.in);
 
-        // Big board of 3X3
+        // Big board of 9X3X3
         char [][][] board = new char [9][3][3];
 
         // marking blank each boxes and its element
