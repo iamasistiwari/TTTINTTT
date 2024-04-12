@@ -34,7 +34,7 @@ public class TTTINTTT {
             System.out.println("Enter player "+"'"+player+"'"+" move in board "+mboard+" : ");
             int row = in.nextInt();
             int col = in.nextInt();
-            if(checkTime == 0 && !firstMove){
+            if(!firstMove){
                 if(mboard == 0 && row == 0 && col == 0){
                     System.out.println("You can't choose same board for other player at first time");
                     checkTime++;
