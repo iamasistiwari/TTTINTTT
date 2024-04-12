@@ -26,9 +26,9 @@ public class TTTINTTT {
         int mboard = in.nextInt();
         char player = 'X';
         boolean firstMove = false;
-        int checkTime = 0;
         boolean gameOver = false;
         while(mboard < 9 && !gameOver){
+            int checkTime = 0;
             print(board);
             System.out.println();
             System.out.println("Enter player "+"'"+player+"'"+" move in board "+mboard+" : ");
@@ -71,13 +71,10 @@ public class TTTINTTT {
                     System.out.println("You can't choose same board for other player at first time");
                     checkTime++;
                 }
-                if(checkTime > 0){
-                    break;
-                }
                 firstMove = true;
             }
-            System.out.println();
-            if(row < 3 && col < 3 && board[mboard][row][col] == ' '){
+
+            if(row < 3 && col < 3 && board[mboard][row][col] == ' ' && checkTime == 0){
                 board[mboard][row][col] = player;
                 moves++;
                 if(moves > 4){
@@ -246,7 +243,6 @@ public class TTTINTTT {
         return false;
     }
     private static void print(char[][][] board){
-        System.out.println();
         System.out.println("\t\t\t\tTotal Moves = "+moves);
         System.out.println();
         //tictactoe [0, 1, 2]
