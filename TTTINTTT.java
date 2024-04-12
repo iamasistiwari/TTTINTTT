@@ -53,6 +53,10 @@ public class TTTINTTT {
                     if (row == 2){
                         mboard = col+6;
                     }
+                    if(moves == 81){
+                        System.out.println("Game is Tie Well Played");
+                        break;
+                    }
                 }
             }else{
                 System.out.println("Invalid move");
