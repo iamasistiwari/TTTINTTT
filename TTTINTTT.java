@@ -20,11 +20,12 @@ public class TTTINTTT {
 
         // we only check the game-over when at-least 18 moves played.
         int moves = 0;
+        print(board);
         System.out.print("Which board you want to start with : ");
         int mboard = in.nextInt();
         char player = 'X';
         boolean gameOver = false;
-        while(!gameOver){
+        while(mboard < 9 && !gameOver){
             print(board);
             System.out.println();
             System.out.println();
