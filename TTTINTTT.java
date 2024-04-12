@@ -31,7 +31,6 @@ public class TTTINTTT {
         while(mboard < 9 && !gameOver){
             print(board);
             System.out.println();
-            System.out.println();
             System.out.println("Enter player "+"'"+player+"'"+" move in board "+mboard+" : ");
             int row = in.nextInt();
             int col = in.nextInt();
@@ -41,6 +40,47 @@ public class TTTINTTT {
                     firstMove = true;
                     break;
                 }
+                if(mboard == 1 && row == 0 && col == 1){
+                    System.out.println("You can't choose same board for other player at first time");
+                    firstMove = true;
+                    break;
+                }
+                if(mboard == 2 && row == 0 && col == 2){
+                    System.out.println("You can't choose same board for other player at first time");
+                    firstMove = true;
+                    break;
+                }
+                if(mboard == 3 && row == 1 && col == 0){
+                    System.out.println("You can't choose same board for other player at first time");
+                    firstMove = true;
+                    break;
+                }
+                if(mboard == 4 && row == 1 && col == 1){
+                    System.out.println("You can't choose same board for other player at first time");
+                    firstMove = true;
+                    break;
+                }
+                if(mboard == 5 && row == 1 && col == 2){
+                    System.out.println("You can't choose same board for other player at first time");
+                    firstMove = true;
+                    break;
+                }
+                if(mboard == 6 && row == 2 && col == 0){
+                    System.out.println("You can't choose same board for other player at first time");
+                    firstMove = true;
+                    break;
+                }
+                if(mboard == 7 && row == 2 && col == 1){
+                    System.out.println("You can't choose same board for other player at first time");
+                    firstMove = true;
+                    break;
+                }
+                if(mboard == 8 && row == 2 && col == 2){
+                    System.out.println("You can't choose same board for other player at first time");
+                    firstMove = true;
+                    break;
+                }
+                firstMove = true;
             }
             System.out.println();
             if(row < 3 && col < 3 && board[mboard][row][col] == ' '){
@@ -212,6 +252,9 @@ public class TTTINTTT {
         return false;
     }
     private static void print(char[][][] board){
+        System.out.println();
+        System.out.println("\t\t\t\tTotal Moves = "+moves);
+        System.out.println();
         //tictactoe [0, 1, 2]
         System.out.print("| "+board[0][0][0]+"|"+board[0][0][1]+" |"+board[0][0][2]+" |\t\t");
         System.out.print("| "+board[1][0][0]+"|"+board[1][0][1]+" |"+board[1][0][2]+" |\t\t");
@@ -285,7 +328,7 @@ public class TTTINTTT {
         if(m8WP != '8'){
             System.out.print(" | '"+m8WP+"' won board 8 | ");
         }
-        System.out.println("Total Moves = "+moves);
-
+        System.out.println();
+        System.out.println();
     }
 }
