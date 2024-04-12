@@ -34,50 +34,44 @@ public class TTTINTTT {
             System.out.println("Enter player "+"'"+player+"'"+" move in board "+mboard+" : ");
             int row = in.nextInt();
             int col = in.nextInt();
-            if(!firstMove){
+            if(checkTime == 0 && !firstMove){
                 if(mboard == 0 && row == 0 && col == 0){
                     System.out.println("You can't choose same board for other player at first time");
-                    firstMove = true;
-                    break;
+                    checkTime++;
                 }
                 if(mboard == 1 && row == 0 && col == 1){
                     System.out.println("You can't choose same board for other player at first time");
-                    firstMove = true;
-                    break;
+                    checkTime++;
                 }
                 if(mboard == 2 && row == 0 && col == 2){
                     System.out.println("You can't choose same board for other player at first time");
-                    firstMove = true;
-                    break;
+                    checkTime++;
                 }
                 if(mboard == 3 && row == 1 && col == 0){
                     System.out.println("You can't choose same board for other player at first time");
-                    firstMove = true;
-                    break;
+                    checkTime++;
                 }
                 if(mboard == 4 && row == 1 && col == 1){
                     System.out.println("You can't choose same board for other player at first time");
-                    firstMove = true;
-                    break;
+                    checkTime++;
                 }
                 if(mboard == 5 && row == 1 && col == 2){
                     System.out.println("You can't choose same board for other player at first time");
-                    firstMove = true;
-                    break;
+                    checkTime++;
                 }
                 if(mboard == 6 && row == 2 && col == 0){
                     System.out.println("You can't choose same board for other player at first time");
-                    firstMove = true;
-                    break;
+                    checkTime++;
                 }
                 if(mboard == 7 && row == 2 && col == 1){
                     System.out.println("You can't choose same board for other player at first time");
-                    firstMove = true;
-                    break;
+                    checkTime++;
                 }
                 if(mboard == 8 && row == 2 && col == 2){
                     System.out.println("You can't choose same board for other player at first time");
-                    firstMove = true;
+                    checkTime++;
+                }
+                if(checkTime > 0){
                     break;
                 }
                 firstMove = true;
