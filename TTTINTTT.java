@@ -2,6 +2,8 @@ package TTTINTTT;
 import java.util.Scanner;
 
 public class TTTINTTT {
+
+    private static int moves = 0;
     public static void main(String[] args) {
         // for input scanner is added
         Scanner in = new Scanner(System.in);
@@ -19,11 +21,12 @@ public class TTTINTTT {
         }
 
         // we only check the game-over when at-least 18 moves played.
-        int moves = 0;
         print(board);
         System.out.print("Which board you want to start with : ");
         int mboard = in.nextInt();
         char player = 'X';
+        boolean firstMove = false;
+        int checkTime = 0;
         boolean gameOver = false;
         while(mboard < 9 && !gameOver){
             print(board);
@@ -32,6 +35,13 @@ public class TTTINTTT {
             System.out.println("Enter player "+"'"+player+"'"+" move in board "+mboard+" : ");
             int row = in.nextInt();
             int col = in.nextInt();
+            if(!firstMove){
+                if(mboard == 0 && row == 0 && col == 0){
+                    System.out.println("You can't choose same board for other player at first time");
+                    firstMove = true;
+                    break;
+                }
+            }
             System.out.println();
             if(row < 3 && col < 3 && board[mboard][row][col] == ' '){
                 board[mboard][row][col] = player;
@@ -275,6 +285,7 @@ public class TTTINTTT {
         if(m8WP != '8'){
             System.out.print(" | '"+m8WP+"' won board 8 | ");
         }
-        System.out.println();
+        System.out.println("Total Moves = "+moves);
+
     }
 }
