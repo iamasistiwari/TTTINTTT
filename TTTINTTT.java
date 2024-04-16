@@ -1,4 +1,5 @@
 package TTTINTTT;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class TTTINTTT {
@@ -23,7 +24,14 @@ public class TTTINTTT {
         // we only check the game-over when at-least 18 moves played.
         print(board);
         System.out.print("Which board you want to start with : ");
-        int mboard = in.nextInt();
+        int mboard = 0;
+        try {
+            mboard = in.nextInt();// Try to read an integer
+        } catch (InputMismatchException e) {
+            System.out.println("Input mismatch! Please enter a valid integer.");
+            // Clear the input buffer to avoid infinite loop
+            in.next(); // Consume the invalid input
+        }
         char player = 'X';
         boolean firstMove = false;
         boolean gameOver = false;
@@ -32,8 +40,15 @@ public class TTTINTTT {
             print(board);
             System.out.println();
             System.out.println("Enter player "+"'"+player+"'"+" move in board "+mboard+" : ");
-            int row = in.nextInt();
-            int col = in.nextInt();
+            int row = 0;
+            int col = 0;
+            try{
+                row = in.nextInt();
+                col = in.nextInt();
+            }catch(InputMismatchException e){
+                System.out.println("Input mismatch! Please enter a valid integer.");
+                in.next();
+            }
             if(!firstMove){
                 if(mboard == 0 && row == 0 && col == 0){
                     System.out.println("You can't choose same board for other player at first time");
@@ -215,10 +230,7 @@ public class TTTINTTT {
         if(m0WP == player && m4WP == player && m8WP == player){
             return true;
         }
-        if(m2WP == player && m4WP == player && m6WP == player){
-            return true;
-        }
-        return false;
+        return m2WP == player && m4WP == player && m6WP == player;
     }
     private static boolean MiniBoardWon(char player, int mboard, char[][][] board){
         // check row wise
@@ -237,10 +249,7 @@ public class TTTINTTT {
         if(board[mboard][0][0] == player && board[mboard][1][1] == player && board[mboard][2][2] == player){
             return true;
         }
-        if(board[mboard][0][2] == player && board[mboard][1][1] == player && board[mboard][2][0] == player){
-            return true;
-        }
-        return false;
+        return board[mboard][0][2] == player && board[mboard][1][1] == player && board[mboard][2][0] == player;
     }
     private static void print(char[][][] board){
         System.out.println("\t\t\t\tTotal Moves = "+moves);
