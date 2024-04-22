@@ -20,17 +20,18 @@ public class TTTINTTT {
                 }
             }
         }
-
         // we only check the game-over when at-least 18 moves played.
         print(board);
-        System.out.print("Which board you want to start with : ");
-        int mboard = 0;
-        try {
-            mboard = in.nextInt();// Try to read an integer
-        } catch (InputMismatchException e) {
-            System.out.println("Input mismatch! Please enter a valid integer.");
-            // Clear the input buffer to avoid infinite loop
-            in.next(); // Consume the invalid input
+        int mboard = -1;
+        while(mboard == -1){
+            System.out.print("Which board you want to start with : ");
+            try {
+                mboard = in.nextInt();// Try to read an integer
+            } catch (InputMismatchException e) {
+                System.out.println("Input mismatch! Please enter a valid integer.");
+                // Clear the input buffer to avoid infinite loop
+                in.next(); // Consume the invalid input
+            }
         }
         char player = 'X';
         boolean firstMove = false;
