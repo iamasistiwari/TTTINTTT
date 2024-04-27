@@ -27,6 +27,10 @@ public class TTTINTTT {
             System.out.print("Which board you want to start with : ");
             try {
                 mboard = in.nextInt();// Try to read an integer
+                if(mboard == 9){
+                    System.out.println("Invalid board");
+                    mboard = -1;
+                }
             } catch (InputMismatchException e) {
                 System.out.println("Input mismatch! Please enter a valid integer.");
                 // Clear the input buffer to avoid infinite loop
