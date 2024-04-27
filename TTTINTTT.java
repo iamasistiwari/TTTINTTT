@@ -44,20 +44,28 @@ public class TTTINTTT {
             int checkTime = 0;
             print(board);
             System.out.println();
-            System.out.println("Enter player "+"'"+player+"'"+" move in board "+mboard+" : ");
-            int row = 0;
-            int col = 0;
-            try{
-                row = in.nextInt();
-                col = in.nextInt();
-            }catch(InputMismatchException e){
-                System.out.println("Input mismatch! Please enter a valid integer.");
-                in.next();
+            int row = -1;
+            int col = -1;
+            while(row == -1 && col == -1){
+                System.out.println("Enter player "+"'"+player+"'"+" move in board "+mboard+" : ");
+                try{
+                    row = in.nextInt();
+                    col = in.nextInt();
+                }catch(InputMismatchException e){
+                    System.out.println("Input mismatch! Please enter a valid integer.");
+                    System.out.println();
+                    row = -1;
+                    col = -1;
+                    in.next();
+                    print(board);
+                }
             }
+
             if(!firstMove){
                 if(mboard == 0 && row == 0 && col == 0){
                     System.out.println("You can't choose same board for other player at first time");
                     checkTime++;
+
                 }
                 if(mboard == 1 && row == 0 && col == 1){
                     System.out.println("You can't choose same board for other player at first time");
