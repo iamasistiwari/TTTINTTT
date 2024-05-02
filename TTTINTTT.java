@@ -26,8 +26,8 @@ public class TTTINTTT {
         while(mboard == -1){
             System.out.print("Which board you want to start with : ");
             try {
-                mboard = in.nextInt();// Try to read an integer
-                if(mboard == 9){
+                mboard = in.nextInt();
+                if(mboard >= 9){
                     System.out.println("Invalid board");
                     mboard = -1;
                 }
@@ -100,7 +100,6 @@ public class TTTINTTT {
                     firstMove = true;
                 }
             }
-
             if(row < 3 && col < 3 && board[mboard][row][col] == ' ' && checkTime == 0){
                 board[mboard][row][col] = player;
                 moves++;
