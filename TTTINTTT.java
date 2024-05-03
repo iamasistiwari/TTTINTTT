@@ -27,7 +27,7 @@ public class TTTINTTT {
             System.out.print("Which board you want to start with : ");
             try {
                 mboard = in.nextInt();
-                if(mboard >= 9){
+                if(mboard < -1 || mboard >= 9){
                     System.out.println("Invalid board");
                     mboard = -1;
                 }
