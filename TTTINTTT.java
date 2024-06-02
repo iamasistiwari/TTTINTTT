@@ -3,8 +3,9 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class TTTINTTT {
-
+    //used to count the total played moves
     private static int moves = 0;
+    // main one
     public static void main(String[] args) {
         // for input scanner is added
         Scanner in = new Scanner(System.in);
@@ -27,7 +28,7 @@ public class TTTINTTT {
             System.out.print("Which board you want to start with : ");
             try {
                 mboard = in.nextInt();
-                if(mboard < -1 || mboard >= 9){
+                if(mboard <= -1 || mboard >= 9){
                     System.out.println("Invalid board");
                     mboard = -1;
                 }
@@ -144,7 +145,7 @@ public class TTTINTTT {
     private static char m7WP = '7';
     private static char m8WP = '8';
 
-    // first check mini board
+    // used to check mini board
     private static boolean m0 = false;
     private static boolean m1 = false;
     private static boolean m2 = false;
